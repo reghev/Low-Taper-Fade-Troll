@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Keyword Image Popup",
+  "description": "Shows an image when searching certain keywords.",
+  "version": "1.0",
+  "permissions": ["activeTab", "webNavigation"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
