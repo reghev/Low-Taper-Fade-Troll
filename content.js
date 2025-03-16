@@ -23,4 +23,19 @@ if (query && keywords.some(keyword => query.toLowerCase().includes(keyword))) {
     
     // Append the image to the body of the page
     document.body.appendChild(img);
+
+    // Create the audio element
+    const audio = document.createElement('audio');
+    audio.src = 'https://www.example.com/audio-clip.mp3'; // Replace with your audio file URL
+    audio.autoplay = true;  // Automatically start the audio
+    audio.loop = false;     // Set to `true` if you want the audio to loop
+    audio.style.display = 'none'; // Hide the audio element from the page
+
+    // Append the audio to the body of the page (though it's hidden)
+    document.body.appendChild(audio);
+
+    // Play the audio
+    audio.play().catch((error) => {
+        console.error("Audio playback failed:", error);
+    });
 }
